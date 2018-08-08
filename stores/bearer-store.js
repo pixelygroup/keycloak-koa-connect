@@ -16,7 +16,7 @@
 'use strict';
 
 let BearerStore = {};
-
+// TODO: 修改为koa调用的方式
 BearerStore.get = (request) => {
   let header = request.headers.authorization;
 

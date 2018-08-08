@@ -88,6 +88,7 @@ GrantManager.prototype.obtainDirectly = function obtainDirectly (username, passw
  * @param {String} sessionHost Optional session host for targetted Keycloak console post-backs.
  * @param {Function} callback Optional callback, if not using promises.
  */
+// TODO: 修改为koa调用的方式
 GrantManager.prototype.obtainFromCode = function obtainFromCode (request, code, sessionId, sessionHost, callback) {
   const params = {
     client_session_state: sessionId,

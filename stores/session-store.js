@@ -20,7 +20,7 @@ function SessionStore (store) {
 }
 
 SessionStore.TOKEN_KEY = 'keycloak-token';
-
+// TODO: 修改为koa调用的方式
 SessionStore.prototype.get = (request) => request.session[SessionStore.TOKEN_KEY];
 
 SessionStore.prototype.clear = function (sessionId) {
@@ -35,13 +35,13 @@ SessionStore.prototype.clear = function (sessionId) {
     }
   });
 };
-
+// TODO: 修改为koa调用的方式
 let store = (grant) => {
   return (request, response) => {
     request.session[SessionStore.TOKEN_KEY] = grant.__raw;
   };
 };
-
+// TODO: 修改为koa调用的方式
 let unstore = (request, response) => {
   delete request.session[SessionStore.TOKEN_KEY];
 };

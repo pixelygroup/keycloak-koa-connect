@@ -230,11 +230,13 @@ Keycloak.prototype.deauthenticated = function (request) {
  * application would prefer to render a fancy template.
  */
 Keycloak.prototype.accessDenied = function (request, response) {
+	// TODO: 修改为koa调用的方式
   response.status(403);
   response.end('Access denied');
 };
 
 /*! ignore */
+// TODO: 修改为koa调用的方式
 Keycloak.prototype.getGrant = function (request, response) {
   var rawData;
 
@@ -264,6 +266,7 @@ Keycloak.prototype.getGrant = function (request, response) {
   return Promise.reject();
 };
 
+// TODO: 修改为koa调用的方式
 Keycloak.prototype.storeGrant = function (grant, request, response) {
   if (this.stores.length < 2 || BearerStore.get(request)) {
     // cannot store bearer-only, and should not store if grant is from the
@@ -288,7 +291,7 @@ Keycloak.prototype.unstoreGrant = function (sessionId) {
 
   this.stores[1].clear(sessionId);
 };
-
+// TODO: 修改为koa调用的方式
 Keycloak.prototype.getGrantFromCode = function (code, request, response) {
   if (this.stores.length < 2) {
     // bearer-only, cannot do this;

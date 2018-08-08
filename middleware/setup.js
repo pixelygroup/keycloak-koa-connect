@@ -14,8 +14,8 @@
  * the License.
  */
 'use strict';
-
+// TODO: 修改为koa调用的方式
 module.exports = function setup (request, response, next) {
-  request.kauth = {};
-  next();
+	request.kauth = {};
+	next();
 };

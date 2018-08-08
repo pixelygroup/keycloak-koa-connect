@@ -16,7 +16,7 @@
 'use strict';
 
 const URL = require('url');
-
+// TODO: 修改为koa调用的方式
 module.exports = function (keycloak) {
   return function postAuth (request, response, next) {
     if (!request.query.auth_callback) {

@@ -16,7 +16,7 @@
 'use strict';
 
 const UUID = require('./../uuid');
-
+// TODO: 修改为koa调用的方式
 function forceLogin (keycloak, request, response) {
   let host = request.hostname;
   let headerHost = request.headers.host.split(':');

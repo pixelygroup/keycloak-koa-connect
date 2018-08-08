@@ -14,7 +14,7 @@
  * the License.
  */
 'use strict';
-
+// TODO: 修改为koa调用的方式
 module.exports = function (keycloak) {
   return function grantAttacher (request, response, next) {
     keycloak.getGrant(request, response)

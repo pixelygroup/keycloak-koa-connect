@@ -76,7 +76,7 @@ function adminNotBefore (request, response, keycloak) {
     }
   });
 }
-
+// TODO: 修改为koa调用的方式
 module.exports = function (keycloak, adminUrl) {
   let url = adminUrl;
   if (url[ url.length - 1 ] !== '/') {

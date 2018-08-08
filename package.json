@@ -35,7 +35,9 @@
   "dependencies": {
     "jwk-to-pem": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "koa": "^2.5.2"
+  },
   "semistandard": {
     "ignore": [
       "**/phantomjs*/"
