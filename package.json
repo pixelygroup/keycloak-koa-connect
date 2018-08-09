@@ -1,15 +1,10 @@
 {
-  "name": "keycloak-connect",
-  "version": "4.3.0-final",
-  "description": "Keycloak Connect Middleware",
-  "homepage": "http://keycloak.org",
+  "name": "keycloak-koa-connet",
+  "version": "1.0.0",
+  "description": "keycloak koa oauth jsonWebToken",
   "main": "index.js",
   "scripts": {
-    "lint": "jshint *.js stores/*.js middleware/*.js middleware/auth-utils/*.js example/*.js",
-    "format": "semistandard",
-    "test": "tape test/unit/*.js test/*.js",
-    "docs": "jsdoc --verbose -d docs -t ./node_modules/ink-docstrap/template -R README.md index.js ./middleware/*.js stores/*.js ./middleware/auth-utils/*.js",
-    "coverage": "istanbul cover tape test/unit/*.js tape test/*.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "sso",
@@ -19,32 +14,18 @@
     "authentication",
     "koa"
   ],
-  "files": [
-    "example",
-    "middleware",
-    "stores",
-    "test",
-    "index.js",
-    "uuid.js"
-  ],
-  "author": {
-    "name": "xrian",
-    "email": "778811xxx@163.com"
-  },
-  "license": "Apache-2.0",
+  "author": "xrian",
+  "license": "MIT",
   "dependencies": {
-    "jwk-to-pem": "^2.0.0"
+    "@types/node": "^10.5.7",
+    "jwk-to-pem": "^2.0.0",
+    "koa-session": "^5.8.2"
   },
   "devDependencies": {
-    "koa": "^2.5.2"
-  },
-  "semistandard": {
-    "ignore": [
-      "**/phantomjs*/"
-    ]
-  },
-  "engines": {
-    "node": ">=8.0.0"
+    "koa": "^2.5.2",
+    "ts-node": "^7.0.0",
+    "tslint": "~5.10.0",
+    "typescript": "~2.9.2"
   },
   "repository": {
     "type": "git",
