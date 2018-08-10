@@ -15,6 +15,8 @@ import PostAuth from './middleware/post-auth';
 import Protect from './middleware/protect';
 import Setup from './middleware/setup';
 
+import IConfig from './interface/iconfig';
+
 /**
  * Instantiate a Keycloak.
  *
@@ -49,7 +51,7 @@ class Keycloak {
   public stores;
 
   // If keycloakConfig is null, Config() will search for `keycloak.json`.
-  constructor(config, keycloakConfig) {
+  constructor(config?: IConfig, keycloakConfig?: string | object) {
     this.config = new Config(keycloakConfig);
     this.grantManager = new GrantManager(this.config);
     this.stores = [BearerStore];
