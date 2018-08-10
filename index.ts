@@ -94,7 +94,7 @@ class Keycloak {
    *
    * @param {Object} options Optional options for specifying details.
    */
-  public middleware(options) {
+  public middleware(options?: { logout: '', admin: '' }) {
     let option = { logout: '', admin: '' };
     if (options) {
       option = options;
@@ -113,7 +113,7 @@ class Keycloak {
     return middlewares;
   }
 
-  public protect(spec) {
+  public protect(spec?: any) {
     return Protect(this, spec);
   }
 

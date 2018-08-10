@@ -2,17 +2,36 @@
  * Created by zhangsong on 2018/8/10.
  */
 import * as Koa from 'koa';
+import * as KoaRouter from 'koa-router';
+import { join } from 'path';
 import KeycloakKoaConnect from '../index';
 
 const app = new Koa();
 
-const keycloakKoaConnect = new KeycloakKoaConnect();
+const koaRouter = new KoaRouter();
+const appRouter = new KoaRouter();
 
-app.use();
+const keycloakKoaConnect = new KeycloakKoaConnect({}, join(__dirname, '..', 'keycloak.json'));
 
-// response
-app.use((ctx) => {
+app.use(...keycloakKoaConnect.middleware());
+koaRouter.all('*', (ctx, next) => {
   ctx.body = 'Hello Koa';
 });
+
+appRouter.use('/', async (ctx, next) => {
+  try {
+    await keycloakKoaConnect.protect()(ctx, next);
+    await next();
+  } catch (e) {
+    console.error(e);
+  }
+}, koaRouter.routes());
+
+app.use(appRouter.routes());
+
+// // response
+// app.use((ctx) => {
+//   ctx.body = 'Hello Koa';
+// });
 
 app.listen(3000);
