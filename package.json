@@ -1,5 +1,5 @@
 {
-  "name": "keycloak-koa-connet",
+  "name": "keycloak-koa-connect",
   "version": "1.0.0",
   "description": "keycloak koa oauth jsonWebToken",
   "main": "index.js",
