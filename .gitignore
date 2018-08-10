@@ -1,13 +1,2 @@
-*.swp
-*.swo
-*.log
-*.orig
-*.gz
-*.tar
-*.tmp
 node_modules/
-/keycloak-*/
-coverage
-pid.txt
 .idea/
-tmp/
