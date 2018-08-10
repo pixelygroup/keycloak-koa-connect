@@ -1,5 +1,6 @@
 "use strict";
 /**
+ * 读取配置文件
  * Created by zhangsong on 2018/8/9.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -27,7 +28,7 @@ class Config {
         }
     }
     /**
-     * Load configuration from a path.
+     * 根据路径加载配置文件
      * @param {String} configPath Path to a `keycloak.json` configuration.
      */
     loadConfiguration(configPath) {

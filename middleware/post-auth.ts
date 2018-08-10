@@ -4,7 +4,6 @@
 
 import * as URL from 'url';
 
-// TODO: 修改为koa调用的方式
 export default (keycloak) => {
   return function postAuth(ctx, next) {
     if (!ctx.request.query.auth_callback) {

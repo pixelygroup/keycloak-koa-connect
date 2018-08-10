@@ -10,4 +10,4 @@ export default function(keycloak) {
       .then(next)
       .catch(() => next());
   };
-};
+}

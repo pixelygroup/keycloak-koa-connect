@@ -14,5 +14,4 @@ function default_1(keycloak) {
     };
 }
 exports.default = default_1;
-;
 //# sourceMappingURL=grant-attacher.js.map

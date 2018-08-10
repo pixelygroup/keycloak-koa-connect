@@ -22,7 +22,7 @@ class Token {
   public content;
   public signature;
   public signed;
-  constructor(token, clientId?:string) {
+  constructor(token, clientId?: string) {
     this.token = token;
     this.clientId = clientId;
 

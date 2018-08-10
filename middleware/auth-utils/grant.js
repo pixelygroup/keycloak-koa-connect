@@ -37,7 +37,7 @@ class Grant {
         this.idToken = grant.id_token;
         this.tokenType = grant.token_type;
         this.expiresIn = grant.expires_in;
-        this.__raw = grant.__raw;
+        this._raw = grant.__raw;
     }
     /**
      * Returns the raw String of the grant, if available.
@@ -46,7 +46,7 @@ class Grant {
      * then `undefined` is returned.
      */
     toString() {
-        return this.__raw;
+        return this._raw;
     }
     /**
      * Determine if this grant is expired/out-of-date.

@@ -2,6 +2,8 @@
  * Created by zhangsong on 2018/8/9.
  */
 
+import Token from './token';
+
 /**
  * Construct a new grant.
  *
@@ -18,12 +20,12 @@
  * @constructor
  */
 class Grant {
-  public accessToken;
-  public refreshToken;
-  public idToken;
+  public accessToken: Token;
+  public refreshToken: Token;
+  public idToken: Token;
   public tokenType;
   public expiresIn;
-  public __raw;
+  public _raw;
 
   constructor(grant) {
     this.update(grant);
@@ -44,7 +46,7 @@ class Grant {
 
     this.tokenType = grant.token_type;
     this.expiresIn = grant.expires_in;
-    this.__raw = grant.__raw;
+    this._raw = grant.__raw;
   }
 
   /**
@@ -54,7 +56,7 @@ class Grant {
    * then `undefined` is returned.
    */
   public toString() {
-    return this.__raw;
+    return this._raw;
   }
 
   /**

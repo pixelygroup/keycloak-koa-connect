@@ -11,6 +11,7 @@ const URL = require("url");
 const grant_1 = require("./grant");
 const rotation_1 = require("./rotation");
 const token_1 = require("./token");
+// 获取请求协议
 const getProtocol = (opts) => {
     return opts.protocol === 'https:' ? https : http;
 };
@@ -193,15 +194,15 @@ class GrantManager {
         if (!grant.isExpired()) {
             return nodeify(Promise.resolve(grant), callback);
         }
-        if (!grant.refresh_token) {
+        if (!grant.refreshToken) {
             return nodeify(Promise.reject(new Error('Unable to refresh without a refresh token')), callback);
         }
-        if (grant.refresh_token.isExpired()) {
+        if (grant.refreshToken.isExpired()) {
             return nodeify(Promise.reject(new Error('Unable to refresh with expired refresh token')), callback);
         }
         const params = {
             grant_type: 'refresh_token',
-            refresh_token: grant.refresh_token.token,
+            refresh_token: grant.refreshToken.token,
             client_id: this.clientId,
         };
         const handler = refreshHandler(this, grant);
@@ -271,7 +272,7 @@ class GrantManager {
         return this.userInfo.apply(this, arguments);
     }
     isGrantRefreshable(grant) {
-        return !this.bearerOnly && (grant && grant.refresh_token);
+        return !this.bearerOnly && (grant && grant.refreshToken);
     }
     /**
      * Create a `Grant` object from a string of JSON data.
@@ -309,19 +310,6 @@ class GrantManager {
             return this.validateGrant(grant);
         }
     }
-    /**
-     * Validate the grant and all tokens contained therein.
-     *
-     * This method examines a grant (in place) and rejects
-     * if any of the tokens are invalid. After this method
-     * resolves, the passed grant is guaranteed to have
-     * valid tokens.
-     *
-     * @param {Grant} The grant to validate.
-     *
-     * @return {Promise} That resolves to a validated grant or
-     * rejects with an error if any of the tokens are invalid.
-     */
     validateGrant(grant) {
         const self = this;
         const validateGrantToken = (grants, tokenName) => {
@@ -339,13 +327,13 @@ class GrantManager {
         };
         return new Promise((resolve, reject) => {
             const promises = [];
-            promises.push(validateGrantToken(grant, 'access_token'));
+            promises.push(validateGrantToken(grant, 'accessToken'));
             if (!self.bearerOnly) {
                 if (grant.refreshToken) {
-                    promises.push(validateGrantToken(grant, 'refresh_token'));
+                    promises.push(validateGrantToken(grant, 'refreshToken'));
                 }
                 if (grant.idToken) {
-                    promises.push(validateGrantToken(grant, 'id_token'));
+                    promises.push(validateGrantToken(grant, 'idToken'));
                 }
             }
             Promise.all(promises)

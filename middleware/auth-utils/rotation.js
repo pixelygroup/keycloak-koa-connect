@@ -22,7 +22,7 @@ class Rotation {
         this.realmUrl = config.realmUrl;
         this.minTimeBetweenJwksRequests = config.minTimeBetweenJwksRequests;
         this.jwks = [];
-        this.lastTimeRequesTime = 0;
+        this.lastTimeRequestTime = 0;
     }
     retrieveJWKs(callback) {
         const url = this.realmUrl + '/protocol/openid-connect/certs';
@@ -63,10 +63,10 @@ class Rotation {
         const self = this;
         // check if we are allowed to send request
         const currentTime = new Date().getTime() / 1000;
-        if (currentTime > this.lastTimeRequesTime + this.minTimeBetweenJwksRequests) {
+        if (currentTime > this.lastTimeRequestTime + this.minTimeBetweenJwksRequests) {
             return this.retrieveJWKs()
                 .then((publicKeys) => {
-                self.lastTimeRequesTime = currentTime;
+                self.lastTimeRequestTime = currentTime;
                 self.jwks = publicKeys.keys;
                 return jwkToPem(self.jwks.find((keys) => {
                     return keys.kid === kid;

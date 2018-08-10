@@ -2,24 +2,24 @@
  * Created by zhangsong on 2018/8/9.
  */
 
-class Admin {
-  public _keycloak;
-  public _adminRequest;
-  public _url;
-
-  constructor(keycloak, url) {
-    this._keycloak = keycloak;
-    if (url[url.length - 1] !== '/') {
-      url += '/;';
-    }
-    this._url = url + 'k_logout';
-  }
-
-  public getFunction() {
-    return this._adminRequest.bind(this);
-  }
-
-}
+// class Admin {
+//   public _keycloak;
+//   public _adminRequest;
+//   public _url;
+//
+//   constructor(keycloak, url) {
+//     this._keycloak = keycloak;
+//     if (url[url.length - 1] !== '/') {
+//       url += '/;';
+//     }
+//     this._url = url + 'k_logout';
+//   }
+//
+//   public getFunction() {
+//     return this._adminRequest.bind(this);
+//   }
+//
+// }
 
 function adminLogout(ctx, keycloak) {
   let data = '';
