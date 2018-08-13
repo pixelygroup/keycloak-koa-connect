@@ -3,9 +3,9 @@
  */
 
 export default function(keycloak, logoutUrl) {
-  return function logout(ctx, next) {
+  return async function logout(ctx, next) {
     if (ctx.request.url !== logoutUrl) {
-      return next();
+      return await next();
     }
 
     if (ctx.state.kauth.grant) {

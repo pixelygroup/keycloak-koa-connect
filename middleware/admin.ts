@@ -78,7 +78,7 @@ export default function(keycloak, adminUrl) {
   const urlLogout = url + 'k_logout';
   const urlNotBefore = url + 'k_push_not_before';
 
-  return function adminRequest(ctx, next) {
+  return async function adminRequest(ctx, next) {
     switch (ctx.req.url) {
       case urlLogout:
         adminLogout(ctx, keycloak);
@@ -87,7 +87,7 @@ export default function(keycloak, adminUrl) {
         adminNotBefore(ctx, keycloak);
         break;
       default:
-        return next();
+        return await next();
     }
   };
 }
