@@ -14,13 +14,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 function default_1(keycloak) {
     return function grantAttacher(ctx, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                ctx.state.kauth.grant = yield keycloak.getGrant(ctx);
-                yield next();
-            }
-            catch (e) {
-                yield next();
-            }
+            ctx.state.kauth.grant = yield keycloak.getGrant(ctx);
+            yield next();
         });
     };
 }

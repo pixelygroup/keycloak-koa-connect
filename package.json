@@ -1,6 +1,6 @@
 {
   "name": "keycloak-koa-connect",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "keycloak koa oauth jsonWebToken",
   "main": "index.js",
   "scripts": {

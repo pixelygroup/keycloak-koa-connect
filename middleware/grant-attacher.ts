@@ -3,11 +3,7 @@
  */
 export default function(keycloak) {
   return async function grantAttacher(ctx, next) {
-    try {
-      ctx.state.kauth.grant = await keycloak.getGrant(ctx);
-      await next();
-    } catch (e) {
-      await next();
-    }
+    ctx.state.kauth.grant = await keycloak.getGrant(ctx);
+    await next();
   };
 }
