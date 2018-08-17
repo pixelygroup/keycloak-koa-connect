@@ -151,11 +151,11 @@ class Keycloak {
           self.storeGrant(grant, ctx);
           return grant;
         })
-        .catch(() => {
-          return Promise.reject();
+        .catch((e) => {
+          return Promise.resolve();
         });
     }
-    return Promise.reject();
+    return Promise.resolve();
   }
 
   public storeGrant(grant, ctx) {

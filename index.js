@@ -130,11 +130,11 @@ class Keycloak {
                 self.storeGrant(grant, ctx);
                 return grant;
             })
-                .catch(() => {
-                return Promise.reject();
+                .catch((e) => {
+                return Promise.resolve();
             });
         }
-        return Promise.reject();
+        return Promise.resolve();
     }
     storeGrant(grant, ctx) {
         if (this.stores.length < 2 || bearer_store_1.default.get(ctx)) {
