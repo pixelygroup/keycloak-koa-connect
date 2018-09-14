@@ -53,8 +53,16 @@ class Keycloak {
         }
         // Add the custom scope value
         this.config.scope = config.scope;
-        if (config && config.store && config.cookies) {
-            throw new Error('Either `store` or `cookies` may be set, but not both');
+        // if (config && config.store && config.cookies) {
+        //   throw new Error('Either `store` or `cookies` may be set, but not both');
+        // }
+        if (config && config.store) {
+            if (Array.isArray(config.store)) {
+                this.stores.push(...config.store);
+            }
+            else {
+                this.stores.push(config.store);
+            }
         }
         // if (config && config.store) {
         //   this.stores.push(new SessionStore(config.store));
