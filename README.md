@@ -49,3 +49,19 @@ app.listen(3000)
 
 ```
 
+keycloak.json
+```
+{
+  "realm": "", // realm
+  "auth-server-url": "", // keycloak 的 URL,例: http://127.0.0.1:8080/auth
+  "ssl-required": "external",
+  "resource": "", // client ID
+  "bearer-only": true, // 必填参数
+  "credentials": {
+    "secret": "如果启用了 client-secret ,那么这里需要填写 secret"
+  },
+  "use-resource-role-mappings": true,
+  "confidential-port": 0,
+  "realm-public-key": ""
+}
+```
