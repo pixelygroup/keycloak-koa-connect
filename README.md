@@ -9,7 +9,7 @@
 $ npm i keycloak-koa-connect --save
 
 ## 使用方法
-因为该库是用 typescript 实现的,所以,如果在 nodejs 中直接导入(require)获取不到值,需要获取其 default 属性
+因为该库是用 typescript 实现的,所以,如果在 nodejs 中直接导入(require)获取不到值,需要获取其 default 属性 <br>
 nodejs
 ```
 const KeycloakConnect = require('keycloak-koa-connect').default;
