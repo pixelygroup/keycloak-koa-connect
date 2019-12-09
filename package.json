@@ -1,6 +1,6 @@
 {
-  "name": "keycloak-koa-connect",
-  "version": "1.0.5",
+  "name": "@pixelygroup/keycloak-koa-connect",
+  "version": "0.9.0",
   "description": "keycloak koa oauth jsonWebToken",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,13 @@
   ],
   "author": "xrian",
   "license": "Apache-2.0",
+  "contributors": [
+    {
+      "name": "Lubos Krystynek",
+      "email": "l.krystynek@pixely.group",
+      "url": "https://pixely.group"
+    }
+  ],
   "dependencies": {
     "@types/node": "^10.5.7",
     "jwk-to-pem": "^2.0.0"
@@ -30,7 +37,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xrian/keycloak-koa-connect.git"
+    "url": "https://github.com/pixelygroup/keycloak-koa-connect.git"
   },
-  "bugs": "https://github.com/xrian/keycloak-koa-connect/issues"
+  "bugs": "https://github.com/pixelygroup/keycloak-koa-connect/issues"
 }
