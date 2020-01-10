@@ -29,9 +29,4 @@ appRouter.use('/', async (ctx, next) => {
 
 app.use(appRouter.routes());
 
-// // response
-// app.use((ctx) => {
-//   ctx.body = 'Hello Koa';
-// });
-
 app.listen(3000);
