@@ -20,16 +20,16 @@
     "Lubos Krystynek <l.krystynek@pixely.group> (https://pixely.group)"
   ],
   "dependencies": {
-    "@types/node": "^10.5.7",
     "jwk-to-pem": "^2.0.0"
   },
   "devDependencies": {
+    "@types/node": "^10.17.13",
     "koa": "^2.5.2",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.8.2",
     "ts-node": "^7.0.0",
     "tslint": "~5.10.0",
-    "typescript": "~2.9.2",
-    "koa-router": "^7.4.0",
-    "koa-session": "^5.8.2"
+    "typescript": "~2.9.2"
   },
   "repository": {
     "type": "git",
