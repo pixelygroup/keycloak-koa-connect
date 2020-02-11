@@ -1,6 +1,6 @@
 {
   "name": "@pixelygroup/keycloak-koa-connect",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "keycloak koa oauth jsonWebToken",
   "main": "index.js",
   "scripts": {
