@@ -31,7 +31,7 @@ exports.default = (keycloak, spec) => {
     }
     return function protect(ctx, next) {
         if (ctx.state.kauth && ctx.state.kauth.grant) {
-            if (!guard || guard(ctx.state.kauth.grant.access_token, ctx)) {
+            if (!guard || guard(ctx.state.kauth.grant.accessToken, ctx)) {
                 return next();
             }
             return keycloak.accessDenied(ctx, next);
