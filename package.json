@@ -1,10 +1,14 @@
 {
   "name": "@pixelygroup/keycloak-koa-connect",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "keycloak koa oauth jsonWebToken",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version-x": "node ./bin/index",
+    "version-major": "version-x -m",
+    "version-minor": "version-x -i",
+    "version-patch": "version-x -p"
   },
   "keywords": [
     "sso",
@@ -12,7 +16,8 @@
     "oauth",
     "oauth2.0",
     "authentication",
-    "koa"
+    "koa",
+    "pixely group"
   ],
   "author": "xrian",
   "license": "Apache-2.0",
@@ -23,6 +28,7 @@
     "jwk-to-pem": "^2.0.0"
   },
   "devDependencies": {
+    "@pixelygroup/version-x": "^0.3.3",
     "@types/node": "^10.17.13",
     "koa": "^2.5.2",
     "koa-router": "^7.4.0",

@@ -108,3 +108,6 @@ router.get( '/extra-special', keycloak.protect('other-app:special'), extraSpecia
 router.get( '/admin', keycloak.protect( 'realm:admin' ), adminHandler )
 
 ```
+
+## Do you enjoy this package? Help us keep it maintained!
+### [Buy us a coffee or become a sponsor](https://github.com/sponsors/pixelygroup)
