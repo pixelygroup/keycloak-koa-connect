@@ -351,7 +351,7 @@ class GrantManager {
         this.validateToken(grant[tokenName])
           .then((token) => {
             grants[tokenName] = token;
-            resolve();
+            resolve(true);
           })
           .catch((err) => {
             reject(new Error('Grant validation failed. Reason: ' + err.message));
